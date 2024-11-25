@@ -1,0 +1,18 @@
+replicaCount: 1
+image:
+  repository: kishore5357/serviceregistry
+  tag: latest
+  pullPolicy: Always
+service:
+  clusterIP:
+    enabled: true
+    ports:
+      port: 8761
+      name: eureka
+  nodePort:
+    enabled: true
+    ports:
+      port: 80
+      targetPort: 8761
+statefulSet:
+  name: eureka

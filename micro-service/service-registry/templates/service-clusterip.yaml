@@ -1,0 +1,13 @@
+{{- if .Values.service.clusterIP.enabled }}
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{ .Values.statefulSet.name }}
+spec:
+  clusterIP: None
+  selector:
+    app: {{ .Values.statefulSet.name }}
+  ports:
+  - port: {{ .Values.service.clusterIP.ports.port }}
+    name: {{ .Values.service.clusterIP.ports.name }}
+{{- end }}

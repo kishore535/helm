@@ -1,0 +1,6 @@
+apiVersion: v2
+name: cloud-gateway
+description: A Helm chart for deploying the cloud-gateway application
+type: application
+version: 1.0.0
+appVersion: 1.0.0

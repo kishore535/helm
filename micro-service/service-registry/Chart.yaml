@@ -1,0 +1,7 @@
+apiVersion: v2
+name: eureka
+version: 1.0.0
+description: Helm chart for deploying Eureka service registry
+type: application
+appVersion: 1.0.0
+

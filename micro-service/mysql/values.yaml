@@ -1,0 +1,16 @@
+replicaCount: 1
+mysql:
+  image: mysql:8.0
+  rootPassword: root
+  storage:
+    size: 1Gi
+    hostPath: "/run/desktop/mnt/host/c/temp/testfiles"
+
+service:
+  port: 3306
+
+initdbConfig:
+  databases:
+    - orderdb
+    - paymentdb
+    - productdb

@@ -1,0 +1,22 @@
+replicaCount: 1
+
+image:
+  repository: kishore5357/orderservice
+  tag: latest
+  pullPolicy: Always
+
+service:
+  type: ClusterIP
+  port: 80
+  targetPort: 8082
+
+configMaps:
+  configServer:
+    name: config-cm
+    key: config_url
+  database:
+    name: mysql-cm
+    key: hostname
+  eurekaServer:
+    name: eureka-cm
+    key: eureka_service_address

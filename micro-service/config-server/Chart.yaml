@@ -1,0 +1,5 @@
+apiVersion: v2
+name: config-server 
+description: config server which acts as service registry 
+version: 2.0.0
+appVersion: 2.0.5

@@ -1,0 +1,22 @@
+replicaCount: 1
+
+image:
+  repository: kishore5357/paymentservice
+  pullPolicy: Always
+  tag: latest
+
+service:
+  type: ClusterIP
+  port: 80
+  targetPort: 8081
+
+env:
+  CONFIG_SERVER_URL:
+    configMapName: config-cm
+    configMapKey: config_url
+  DB_HOST:
+    configMapName: mysql-cm
+    configMapKey: hostname
+  EUREKA_SERVER_ADDRESS:
+    configMapName: eureka-cm
+    configMapKey: eureka_service_address

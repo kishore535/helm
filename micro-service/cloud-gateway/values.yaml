@@ -1,0 +1,21 @@
+replicaCount: 1
+
+image:
+  repository: kishore5357/cloud-gateway
+  tag: latest
+  pullPolicy: Always
+
+service:
+  type: LoadBalancer
+  port: 80
+  targetPort: 9090
+
+env:
+  CONFIG_SERVER_URL: "http://default-config-server-url"
+  EUREKA_SERVER_ADDRESS: "http://default-eureka-address"
+
+configMaps:
+  config:
+    config_url: "http://config-server-svc"
+  eureka:
+    eureka_service_address: "http://eureka-0.eureka:8761/eureka"

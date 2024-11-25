@@ -1,0 +1,21 @@
+replicaCount: 1
+
+image:
+  repository: kishore5357/configserver
+  pullPolicy: Always
+  tag: latest
+
+service:
+  type: ClusterIP
+  port: 80
+  targetPort: 9296
+
+configMapName: eureka-cm
+configKey: eureka_service_address
+
+env:
+  - name: EUREKA_SERVER_ADDRESS
+    valueFrom:
+      configMapKeyRef:
+        name: eureka-cm
+        key: eureka_service_address

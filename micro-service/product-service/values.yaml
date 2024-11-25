@@ -1,0 +1,12 @@
+replicaCount: 1
+
+image:
+  repository: kishore5357/productservice
+  pullPolicy: Always
+  tag: latest
+
+service:
+  type: ClusterIP
+  port: 80
+  targetPort: 8082
+

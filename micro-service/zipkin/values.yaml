@@ -1,0 +1,14 @@
+replicaCount: 1
+image:
+  repository: openzipkin/zipkin
+  tag: latest
+  pullPolicy: Always
+service:
+  type: ClusterIP
+  port: 9411
+  loadBalancer:
+    enabled: true
+resources: {}
+nodeSelector: {}
+tolerations: []
+affinity: {}
