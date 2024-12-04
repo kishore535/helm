@@ -22,7 +22,7 @@ spec:
         - containerPort: {{ .Values.service.targetPort }}
         env:
         - name: EUREKA_SERVER_ADDRESS 
-          valuesFrom:
+          valueFrom:
             configMapKeyRef:
               name: eureka-configmap
               key: eureka_service_address
